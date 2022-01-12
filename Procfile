@@ -1,1 +1,1 @@
-web: gunicorn movie_trivia_services.wsgi
+web: gunicorn movie_trivia_service.wsgi
