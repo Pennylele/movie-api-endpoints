@@ -21,7 +21,7 @@ class QuestionsList(generics.ListAPIView):
     serializer_class = QuestionsSerializer
 
 
-# query a question for a specific movie - (problematic rn)
+# query a question for a specific movie
 class MovieQuestions(APIView):
     def get(self, request, format=None, **kwargs):
         movie = Questions.objects.filter(movie__name=kwargs['topic']).order_by('?')[:1]
@@ -37,7 +37,7 @@ class RandomQuestion(APIView):
         return Response(serializer.data)
 
 
-# check whether the answers are correct
+# check whether the answer is correct
 class ValidateAnswers(APIView):
     def get(self, request, format=None, **kwargs):
         correct_ans_obj = Questions.objects.filter(pk=kwargs['pk'])[0]
