@@ -16,7 +16,7 @@ class MovieList(generics.ListAPIView):
     serializer_class = MovieSerializer
 
 
-class QuestionsList(generics.ListCreateAPIView):
+class QuestionsList(generics.ListAPIView):
     queryset = Questions.objects.all()
     serializer_class = QuestionsSerializer
 
